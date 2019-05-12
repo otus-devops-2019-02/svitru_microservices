@@ -2,3 +2,6 @@ REPOSITORY                TAG                 IMAGE ID            CREATED       
 ubuntu-tmp-file           latest              686604fefa01        3 hours ago         119MB
 ubuntu                    16.04               a3551444fc85        2 weeks ago         119MB
 hello-world               latest              fce289e99eb9        4 months ago        1.84kB
+
+Image является слепком (snapshot'ом) контейнера, неизменяемой сущностью. Поэтому согласно выводу команды inspect, Image не имеет многих параметров присущих контейнеру: текущее состояние (state), настройки хоста, настройки и состояние сети и проч.
+
