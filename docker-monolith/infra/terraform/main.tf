@@ -17,7 +17,7 @@ resource "google_compute_instance" "instance" {
   name         = "instance-${count.index}"
   machine_type = "g1-small"
   zone         = "${var.zone}"
-  count = 2
+  count        = "${var.count}"
 
   boot_disk {
     initialize_params {
@@ -29,6 +29,10 @@ resource "google_compute_instance" "instance" {
     network = "default"
 
     access_config = {}
+  }
+  
+  metadata {
+    ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 
 }
