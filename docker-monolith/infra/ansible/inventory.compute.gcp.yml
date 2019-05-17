@@ -1,0 +1,10 @@
+plugin: gcp_compute
+projects:
+  - infra-235108
+keyed_groups:
+  - prefix: gcp
+    key: tags
+filters: []
+auth_kind: serviceaccount
+service_account_file: /home/svit/account.json
+
