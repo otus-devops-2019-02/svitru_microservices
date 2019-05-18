@@ -1,0 +1,30 @@
+{
+    "variables": {
+        "project_id": null,
+	"source_image_family": null,
+	"machine_type": "f1-micro"
+    },
+    "builders": [
+        {
+            "type": "googlecompute",
+            "project_id": "{{ user `project_id` }}",
+            "image_name": "reddit-docker-base-{{timestamp}}",
+            "image_family": "reddit-docker-base",
+            "source_image_family": "{{ user `source_image_family` }}",
+            "zone": "europe-west1-b",
+            "ssh_username": "appuser",
+            "machine_type": "{{ user `machine_type` }}",
+	    "disk_type": "{{ user `disk_type` }}",
+	    "disk_size": "{{ user `disk_size` }}",
+	    "tags": "{{ user `tags` }}",
+	    "image_description": "{{ user `image_description` }}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "../ansible/site.yml"
+        }
+    ]
+}
+

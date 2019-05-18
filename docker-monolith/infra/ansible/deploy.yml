@@ -1,0 +1,11 @@
+- hosts: all
+  become: true
+  tasks:
+  - name: Run reddit docker container
+    docker_container:
+      name: reddit
+      image: svitru/otus-reddit:1.0
+      state: started
+      ports:
+      - "9292:9292"
+
