@@ -1,9 +1,5 @@
 - hosts: all
   become: true
-  vars:
-    docker_ecs_login_password: "{{ lookup('env','ECS_LOGIN_PASSWORD') }}"
-  environment:
-    PYTHONPATH: "{{ lookup('env','PYTHONPATH') }}:/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages"
   tasks:
   - name: Run reddit docker container
     docker_container:

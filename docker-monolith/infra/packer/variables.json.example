@@ -1,0 +1,9 @@
+{
+  "project_id": "infra-777",
+  "source_image_family": "ubuntu-1604-lts",
+  "disk_type": "pd-standard",
+  "disk_size": "10",
+  "tags": "firewall-tags-for-image",
+  "image_description": "Description for Image"
+}
+
