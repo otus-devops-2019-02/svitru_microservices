@@ -1,5 +1,5 @@
-FROM ruby:2.2
-RUN rm /etc/apt/sources.list && echo 'deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted' >/etc/apt/sources.list && apt-get update --force-yes -qq && apt-get install --force-yes -y build-essential
+FROM ubuntu:16.04
+RUN apt-get update && apt-get install -y ruby-full ruby-dev build-essential && gem install bundler --no-ri --no-rdoc
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
