@@ -1,5 +1,5 @@
 FROM ruby:2.2
-RUN apt-get update -qq && apt-get install -y build-essential
+RUN rm /etc/apt/sources.list && echo 'deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted' >/etc/apt/sources.list && apt-get update --force-yes -qq && apt-get install --force-yes -y build-essential
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
