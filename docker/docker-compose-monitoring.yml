@@ -49,6 +49,14 @@ services:
       - prometheus
     ports:
       - 3000:3000
+  alertmanager:
+    image: ${USER_NAME}/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+    networks:
+      - reddit
+    ports:
+      - 9093:9093
 volumes:
   prometheus_data:
   grafana_data:
