@@ -1,4 +1,4 @@
-# README HW №20
+# README HW №21
 ### **Работа с Prometheus:**
   - Установили docker-machine на GCP, настроили файрвол
   - Запустили prometheus в контейнере, ознакомление с веб-интерфейсом
