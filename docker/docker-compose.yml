@@ -4,6 +4,8 @@ services:
     image: mongo:3.2
     volumes:
       - post_db:/data/db
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       reddit:
         aliases:
@@ -14,6 +16,8 @@ services:
     image: ${USERNAME}/ui:${UI_VERSION}
     ports:
       - ${UI_PORT}:9292/tcp
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       - reddit
     logging:
@@ -24,6 +28,8 @@ services:
 
   post:
     image: ${USERNAME}/post:${POST_VERSION}
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       - reddit
     logging:
@@ -34,6 +40,8 @@ services:
 
   comment:
     image: ${USERNAME}/comment:${COMMENT_VERSION}
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       - reddit
 
