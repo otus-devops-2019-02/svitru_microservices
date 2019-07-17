@@ -4,7 +4,11 @@ kind: Ingress
 metadata:
   name: ui
 spec:
-  backend:
-    serviceName: ui
-    servicePort: 80
+  rules:
+  - http:
+      paths:
+      - path: /8
+        backend:
+          serviceName: ui
+          servicePort: 9292
 
