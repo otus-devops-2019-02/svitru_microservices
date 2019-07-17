@@ -7,7 +7,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /8
+      - path: /*
         backend:
           serviceName: ui
           servicePort: 9292
