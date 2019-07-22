@@ -32,7 +32,7 @@ spec:
       volumes:
       - name: mongo-persistent-storage
         persistentVolumeClaim:
-          claimName: mongo-pvc
+          claimName: mongo-pvc-dynamic
       - name: mongo-gce-pd-storage
         gcePersistentDisk:
           pdName: reddit-mongo-disk
