@@ -5,6 +5,7 @@ metadata:
   name: ui
   annotations:
     kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.global-static-ip-name: "reddit-web-ip"
 spec:
   tls:
   - secretName: ui-ingress

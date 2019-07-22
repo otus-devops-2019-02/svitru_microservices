@@ -10,6 +10,7 @@ spec:
   type: NodePort
   ports:  
   - port: 9292
+    name: "puma"
     protocol: TCP
     targetPort: 9292
   selector:
